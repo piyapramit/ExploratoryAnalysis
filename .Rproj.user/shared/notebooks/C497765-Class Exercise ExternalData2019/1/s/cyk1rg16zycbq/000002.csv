@@ -1,0 +1,4 @@
+"0","## Put long string in variable ""indicators"""
+"0","indicators <- c(""NY.GDP.PCAP.PP.CD"",""NY.GDP.MKTP.KD.ZG"",""SP.POP.TOTL"",""SP.POP.GROW"")"
+"0","nd <- WDI(""all"", indicators, extra=TRUE, start=1960, end=2009)"
+"0","head(nd,3000)"

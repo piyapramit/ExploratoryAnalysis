@@ -1,0 +1,225 @@
+---
+title: "R Notebook - reading data from public sources"
+Name:
+---
+
+This asignment has three tasks for you to complete.
+
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file).
+
+Using Census Data
+
+Extract state level data
+
+Here we extract total population, white population and black population of Alabama. To look up other variables, see the list of Census 2010 variables: http://api.census.gov/data/2010/sf1/variables.html.
+
+call for total population, white population and black population of Alabama
+  total population = P0030001, white population = P0030002,
+  black population = P0030003; hispanic = P0040003; asian = P0030005
+FIPS code of Alabama = 01
+FIPS code of New Jersey = 34
+
+FIPS codes identify the state for census data
+The ldply function of the plyr library puts the results from the census data query into a dataframe. It is a tool that is used to cut apart and concatenate dataframes. So, if you wanted to take the the first 100 rows of one dataframe and put it on the top or bottom of another dataset, this would be a tool you could use.
+
+```{r}
+
+## install.packages("RJSONIO")
+
+library(RJSONIO)
+
+
+## install.packages("rjson")
+
+library(rjson)
+
+## install.packages("plyr")
+library(plyr)
+
+## Data from state fips 48 - Texas
+test<-fromJSON(file=url("http://api.census.gov/data/2010/sf1?key=f93eb42eefefbd90cedaa06c21eb9c50e03d5ee5&get=P0030001,P0030002,P0030003,P0040003,P0030005,NAME&for=county:*&in=state:48"))
+
+## creating a dataframe, test2, by using all data except for first row with variable names
+test2<-ldply(test)[-1,]
+
+## going back to test data and taking first row with variable names
+## and using them as column names for new dataframe, test2.
+
+names(test2)<-ldply(test)[1,]
+head(test2)
+```
+
+
+New Jersey Census Data
+Example URL to get data and selected variables:
+"http://api.census.gov/data/2010/sf1?key=[f93eb42eefefbd90cedaa06c21eb9c50e03d5ee5]&get=P0030001,P0030002,P0030003,P0040003,P0030005,&for=state:34"
+
+In the example below:
+P0010001 = total population of county
+
+Only one ethnicity specified
+PCT0050012 = number of people who are of Korean origin
+PCT0050015 = number of people who are of Nepalese origin 
+
+
+
+```{r}
+testt<-fromJSON(file=url("http://api.census.gov/data/2010/sf1?key=f93eb42eefefbd90cedaa06c21eb9c50e03d5ee5&get=P0010001,PCT0050012,PCT0050015,NAME&for=county:*&in=state:34"))
+testt2<-ldply(testt)[-1,]
+names(testt2)<-ldply(testt)[1,]
+head(testt2)
+
+njpopAsian<-testt2
+
+## Characters are often read in as character variables, as.numeric converts them assuring that math operations work.
+njpopAsian$totpop<-as.numeric(njpopAsian$P0010001)
+
+njpopAsian$koreapct<-as.numeric(njpopAsian$PCT0050012)/njpopAsian$totpop
+njpopAsian$nepalpct<-as.numeric(njpopAsian$PCT0050015)/njpopAsian$totpop
+
+njpopAsian
+
+njpopAsian$nepalcnt<-as.numeric(njpopAsian$PCT0050015)
+njpopNepal<-njpopAsian[order(-njpopAsian$nepalcnt),]
+njpopNepal
+```
+
+
+
+1. Tell me  which county these ethnic groups most often reside:
+
+Thai - PCT0050019
+Vietnamese PCT0050020
+Asian Indian PCT0050002
+Cuban PCT0110006
+Men 100 to 104 years old	PCT0120103
+Women 100 to 104 years old	PCT0120207
+
+```{r}
+
+```
+
+
+
+Using World Bank Data
+
+## install
+## Loading Data from World Bank
+
+```{r}
+## install.packages("WDI")
+
+library(WDI)
+```
+Sample Variables
+NY.GDP.PCAP.PP.CD = Gross Domestic product per capita
+NY.GDP.MKTP.KD.ZG = Annual Growth Rate GDP
+SP.POP.TOTL = Total Population
+SP.POP.GROW = Annual Population Growth
+
+
+```{r}
+## Put long string in variable "indicators"
+indicators <- c("NY.GDP.PCAP.PP.CD","NY.GDP.MKTP.KD.ZG","SP.POP.TOTL","SP.POP.GROW")
+nd <- WDI("all", indicators, extra=TRUE, start=1960, end=2009)
+head(nd,3000)
+tail(nd)
+str(nd)
+```
+
+Want to Remove all entries that are not countries
+Scroll down and see where countries start (Andorra) - row 251 
+From tail and str command we see that database ends at 13200
+I create a new dataframe, nd.c, with only rows 251-13200. The comma and blank indicates all columns
+```{r}
+## only observations with countries
+nd.c<-nd[251:13200,]
+head(nd.c)
+tail(nd.c)
+```
+
+
+Get rid of any records where there is amissing values for "country" and
+put that into a new dataframe, nd.d
+```{r}
+nd.d<-nd.c[!is.na(nd.c$country),]
+head(nd.d)
+```
+
+Make a box plot, using ggplot2, ot the World Bank data
+
+```{r}
+## install.packages("ggplot2")
+library(ggplot2)
+
+## "gg" is a variable with the boxplot command set to plot the annual growth rate GDP
+## variables from World Bank Dataset
+gg=ggplot() + geom_boxplot(data=nd.d,aes(x=year,y=NY.GDP.MKTP.KD.ZG,group=year))
+gg
+head(nd.d)
+head(nd.d,100)
+tail(nd.d)
+summary(nd.d)
+
+## creating a new dataframe for only year 2000
+nd.d2000<-nd.d [which (nd.d$year=="2000"),]
+nd.dd <- nd.d2000[order (-nd.d2000$NY.GDP.MKTP.KD.ZG),]
+head(nd.dd,50)
+barplot(nd.dd$NY.GDP.MKTP.KD.ZG, names.arg = nd.dd$country, las=2, cex.names = 0.3, main ="GDP Growth 2000")
+```
+
+From the boxplot one can see that the majority of the countries growth rates are close to the mean growth rate, but there are many outliers for economic, political or military reasons. In year 2000, there appears to be fewer outliers than usual.
+
+
+2. Perform a similar analysis or literacy rates among young people
+
+Literacy rate, youth female (% of females ages 15-24) SE.ADT.1524.LT.FE.ZS
+Literacy rate, youth male (% of males ages 15-24)           
+"SE.ADT.1524.LT.MA.ZS"
+
+```{r}
+
+```
+
+
+Using Quantmod for financial analysis
+ 
+
+```{r}
+
+
+## install.packages("arules")
+## install.packages("ROCR")
+## install.packages('quantmod')
+
+library("quantmod")
+
+getSymbols("GOOG",src="yahoo")
+barChart(GOOG)
+getSymbols("MSFT",src="yahoo")
+barChart(MSFT)
+
+getSymbols("AAPL", src = "yahoo")
+barChart(AAPL)
+```
+
+
+
+3. Create a similar barchart for Amazon (AMZN)
+
+
+```{r}
+
+```
+

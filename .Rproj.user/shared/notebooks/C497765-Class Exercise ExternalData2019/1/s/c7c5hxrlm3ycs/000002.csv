@@ -1,0 +1,7 @@
+"0","testt<-fromJSON(file=url(""http://api.census.gov/data/2010/sf1?key=f93eb42eefefbd90cedaa06c21eb9c50e03d5ee5&get=P0010001,PCT0050012,PCT0050015,NAME&for=county:*&in=state:34""))"
+"0","testt2<-ldply(testt)[-1,]"
+"0","names(testt2)<-ldply(testt)[1,]"
+"2","Warning:"
+"2"," closing unused connection 3 (http://api.census.gov/data/2010/sf1?key=f93eb42eefefbd90cedaa06c21eb9c50e03d5ee5&get=P0010001,PCT0050012,PCT0050015,NAME&for=county:*&in=state:34)
+"
+"0","head(testt2)"

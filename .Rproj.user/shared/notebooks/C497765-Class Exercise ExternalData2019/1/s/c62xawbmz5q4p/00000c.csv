@@ -1,0 +1,1 @@
+"0","barplot(nd.dd$NY.GDP.MKTP.KD.ZG, names.arg = nd.dd$country, las=2, cex.names = 0.3, main =""GDP Growth 2000"")"

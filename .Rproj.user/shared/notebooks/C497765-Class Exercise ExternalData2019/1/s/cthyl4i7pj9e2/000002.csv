@@ -1,0 +1,3 @@
+"0","## only observations with countries"
+"0","nd.c<-nd[251:13200,]"
+"0","head(nd.c)"

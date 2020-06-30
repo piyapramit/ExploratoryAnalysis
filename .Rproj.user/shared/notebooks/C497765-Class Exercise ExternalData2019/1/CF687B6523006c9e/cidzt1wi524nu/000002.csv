@@ -1,0 +1,2 @@
+"0","nd.d<-nd.c[!is.na(nd.c$country),]"
+"0","head(nd.d)"

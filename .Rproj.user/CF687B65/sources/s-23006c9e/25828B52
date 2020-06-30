@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1549933872048.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "25828B52",
+    "lastKnownWriteTime" : 1536711489,
+    "last_content_update" : 1588194459851,
+    "path" : "/cloud/project/Class Exercise ExternalData2019.Rmd",
+    "project_path" : "Class Exercise ExternalData2019.Rmd",
+    "properties" : {
+        "cursorPosition" : "240,0",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

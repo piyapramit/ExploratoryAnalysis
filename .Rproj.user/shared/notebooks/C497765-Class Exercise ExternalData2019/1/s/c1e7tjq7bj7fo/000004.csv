@@ -1,0 +1,12 @@
+"0",""
+"0","njpopAsian<-testt2"
+"2","Warning:"
+"2"," closing unused connection 3 (http://api.census.gov/data/2010/sf1?key=f93eb42eefefbd90cedaa06c21eb9c50e03d5ee5&get=P0010001,PCT0050012,PCT0050015,NAME&for=county:*&in=state:34)
+"
+"0","## Characters are often read in as character variables, as.numeric converts them assuring that math operations work."
+"0","njpopAsian$totpop<-as.numeric(njpopAsian$P0010001)"
+"0",""
+"0","njpopAsian$koreapct<-as.numeric(njpopAsian$PCT0050012)/njpopAsian$totpop"
+"0","njpopAsian$nepalpct<-as.numeric(njpopAsian$PCT0050015)/njpopAsian$totpop"
+"0",""
+"0","njpopAsian"

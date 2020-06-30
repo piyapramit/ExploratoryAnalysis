@@ -1,0 +1,5 @@
+"2","Warning in .Internal(parent.env(env)) :"
+"2","
+ "
+"2"," closing unused connection 3 (http://api.census.gov/data/2010/sf1?key=f93eb42eefefbd90cedaa06c21eb9c50e03d5ee5&get=P0030001,P0030002,P0030003,P0040003,P0030005,NAME&for=county:*&in=state:48)
+"

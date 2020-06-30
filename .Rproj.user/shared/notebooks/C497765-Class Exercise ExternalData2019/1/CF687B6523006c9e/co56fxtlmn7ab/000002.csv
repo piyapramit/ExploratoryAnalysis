@@ -1,0 +1,356 @@
+"0",""
+"0",""
+"0"," install.packages(""arules"")"
+"2","Installing package into ‘/home/rstudio-user/R/x86_64-pc-linux-gnu-library/3.5’
+(as ‘lib’ is unspecified)
+"
+"2","trying URL 'http://package-proxy/src/contrib/arules_1.6-2.tar.gz'
+"
+"2","Content type 'application/x-gzip'"
+"2"," length 1910309 bytes (1.8 MB)
+"
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","
+"
+"2","downloaded 1.8 MB
+
+"
+"2","* installing *source* package ‘arules’ ...
+"
+"2","** package ‘arules’ successfully unpacked and MD5 sums checked
+"
+"2","** libs
+"
+"1","gcc -I""/opt/R/3.5.2/lib/R/include"" -DNDEBUG   -I/usr/local/include  -DNDEBUG -DNIMAPFN -fpic  -g -O2  -c arrayIndex.c -o arrayIndex.o
+"
+"1","gcc -I""/opt/R/3.5.2/lib/R/include"" -DNDEBUG   -I/usr/local/include  -DNDEBUG -DNIMAPFN -fpic  -g -O2  -c bitmat.c -o bitmat.o
+"
+"1","gcc -I""/opt/R/3.5.2/lib/R/include"" -DNDEBUG   -I/usr/local/include  -DNDEBUG -DNIMAPFN -fpic  -g -O2  -c dll.c -o dll.o
+"
+"1","gcc -I""/opt/R/3.5.2/lib/R/include"" -DNDEBUG   -I/usr/local/include  -DNDEBUG -DNIMAPFN -fpic  -g -O2  -c issubset.c -o issubset.o
+"
+"1","gcc -I""/opt/R/3.5.2/lib/R/include"" -DNDEBUG   -I/usr/local/include  -DNDEBUG -DNIMAPFN -fpic  -g -O2  -c istree.c -o istree.o
+"
+"1","gcc -I""/opt/R/3.5.2/lib/R/include"" -DNDEBUG   -I/usr/local/include  -DNDEBUG -DNIMAPFN -fpic  -g -O2  -c matrix.c -o matrix.o
+"
+"1","gcc -I""/opt/R/3.5.2/lib/R/include"" -DNDEBUG   -I/usr/local/include  -DNDEBUG -DNIMAPFN -fpic  -g -O2  -c newS4object.c -o newS4object.o
+"
+"1","gcc -I""/opt/R/3.5.2/lib/R/include"" -DNDEBUG   -I/usr/local/include  -DNDEBUG -DNIMAPFN -fpic  -g -O2  -c ptree.c -o ptree.o
+"
+"1","gcc -I""/opt/R/3.5.2/lib/R/include"" -DNDEBUG   -I/usr/local/include  -DNDEBUG -DNIMAPFN -fpic  -g -O2  -c rapriori.c -o rapriori.o
+"
+"1","gcc -I""/opt/R/3.5.2/lib/R/include"" -DNDEBUG   -I/usr/local/include  -DNDEBUG -DNIMAPFN -fpic  -g -O2  -c reclat.c -o reclat.o
+"
+"1","gcc -I""/opt/R/3.5.2/lib/R/include"" -DNDEBUG   -I/usr/local/include  -DNDEBUG -DNIMAPFN -fpic  -g -O2  -c similarity.c -o similarity.o
+"
+"1","gcc -I""/opt/R/3.5.2/lib/R/include"" -DNDEBUG   -I/usr/local/include  -DNDEBUG -DNIMAPFN -fpic  -g -O2  -c symtab.c -o symtab.o
+"
+"1","gcc -I""/opt/R/3.5.2/lib/R/include"" -DNDEBUG   -I/usr/local/include  -DNDEBUG -DNIMAPFN -fpic  -g -O2  -c tfscan.c -o tfscan.o
+"
+"1","gcc -I""/opt/R/3.5.2/lib/R/include"" -DNDEBUG   -I/usr/local/include  -DNDEBUG -DNIMAPFN -fpic  -g -O2  -c tid_count.c -o tid_count.o
+"
+"1","gcc -I""/opt/R/3.5.2/lib/R/include"" -DNDEBUG   -I/usr/local/include  -DNDEBUG -DNIMAPFN -fpic  -g -O2  -c tract.c -o tract.o
+"
+"1","gcc -I""/opt/R/3.5.2/lib/R/include"" -DNDEBUG   -I/usr/local/include  -DNDEBUG -DNIMAPFN -fpic  -g -O2  -c vecops.c -o vecops.o
+"
+"1","gcc -I""/opt/R/3.5.2/lib/R/include"" -DNDEBUG   -I/usr/local/include  -DNDEBUG -DNIMAPFN -fpic  -g -O2  -c warm.c -o warm.o
+"
+"1","gcc -shared -L/opt/R/3.5.2/lib/R/lib -L/usr/local/lib -o arules.so arrayIndex.o bitmat.o dll.o issubset.o istree.o matrix.o newS4object.o ptree.o rapriori.o reclat.o similarity.o symtab.o tfscan.o tid_count.o tract.o vecops.o warm.o -L/opt/R/3.5.2/lib/R/lib -lR
+"
+"2","installing to /home/rstudio-user/R/x86_64-pc-linux-gnu-library/3.5/arules/libs
+"
+"2","** R
+"
+"2","** data
+"
+"2","** inst
+"
+"2","** byte-compile and prepare package for lazy loading
+"
+"2","Creating a new generic function for ‘abbreviate’ in package ‘arules’
+"
+"2","Creating a new generic function for ‘write’ in package ‘arules’
+"
+"2","** help
+"
+"2","*** installing help indices
+"
+"2","** building package indices
+"
+"2","** installing vignettes
+"
+"2","** testing if installed package can be loaded
+"
+"2","* DONE (arules)
+"
+"2","
+"
+"2",""
+"2","The downloaded source packages are in
+	‘/tmp/RtmpSbNXxI/downloaded_packages’"
+"2",""
+"2","
+"
+"0"," install.packages(""ROCR"")"
+"2","Installing package into ‘/home/rstudio-user/R/x86_64-pc-linux-gnu-library/3.5’
+(as ‘lib’ is unspecified)
+"
+"2","trying URL 'http://package-proxy/src/contrib/ROCR_1.0-7.tar.gz'
+"
+"2","Content type 'application/x-gzip'"
+"2"," length 109182 bytes (106 KB)
+"
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","
+"
+"2","downloaded 106 KB
+
+"
+"2","* installing *source* package ‘ROCR’ ...
+"
+"2","** package ‘ROCR’ successfully unpacked and MD5 sums checked
+"
+"2","** R
+"
+"2","** data
+"
+"2","** demo
+"
+"2","** inst
+"
+"2","** byte-compile and prepare package for lazy loading
+"
+"2","** help
+"
+"2","*** installing help indices
+"
+"2","** building package indices
+"
+"2","** testing if installed package can be loaded
+"
+"2","* DONE (ROCR)
+"
+"2","
+"
+"2",""
+"2","The downloaded source packages are in
+	‘/tmp/RtmpSbNXxI/downloaded_packages’"
+"2",""
+"2","
+"
+"0"," install.packages('quantmod')"
+"2","Installing package into ‘/home/rstudio-user/R/x86_64-pc-linux-gnu-library/3.5’
+(as ‘lib’ is unspecified)
+"
+"2","trying URL 'http://package-proxy/src/contrib/quantmod_0.4-13.tar.gz'
+"
+"2","Content type 'application/x-tar'"
+"2"," length 935781 bytes (913 KB)
+"
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","="
+"2","
+"
+"2","downloaded 913 KB
+
+"
+"2","* installing *binary* package ‘quantmod’ ...
+"
+"2","* DONE (quantmod)
+"
+"2","
+"
+"2",""
+"2","The downloaded source packages are in
+	‘/tmp/RtmpSbNXxI/downloaded_packages’"
+"2",""
+"2","
+"
+"0","library(""quantmod"")"
+"2","Loading required package: xts
+"
+"2","Loading required package: zoo
+"
+"2","
+Attaching package: ‘zoo’
+
+"
+"2","The following objects are masked from ‘package:base’:
+
+    as.Date, as.Date.numeric
+
+"
+"2","Loading required package: TTR
+"
+"2","Version 0.4-0 included new data defaults. See ?getSymbols.
+Learn from a quantmod author: https://www.datacamp.com/courses/importing-and-managing-financial-data-in-r
+"
+"0","getSymbols(""GOOG"",src=""yahoo"")"
+"2","‘getSymbols’ currently uses auto.assign=TRUE by default, but will
+use auto.assign=FALSE in 0.5-0. You will still be able to use
+‘loadSymbols’ to automatically load data. getOption(""getSymbols.env"")
+and getOption(""getSymbols.auto.assign"") will still be checked for
+alternate defaults.
+
+This message is shown once per session and may be disabled by setting 
+options(""getSymbols.warning4.0""=FALSE). See ?getSymbols for details.
+
+"
+"2","
+WARNING: There have been significant changes to Yahoo Finance data.
+Please see the Warning section of ‘?getSymbols.yahoo’ for details.
+
+This message is shown once per session and may be disabled by setting
+options(""getSymbols.yahoo.warning""=FALSE).
+"
+"1","[1]"
+"1"," ""GOOG"""
+"1","
+"
+"0","barChart(GOOG)"

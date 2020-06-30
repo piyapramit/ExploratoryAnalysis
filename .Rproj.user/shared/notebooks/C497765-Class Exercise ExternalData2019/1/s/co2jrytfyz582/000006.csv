@@ -1,0 +1,4 @@
+"0",""
+"0","njpopAsian$nepalcnt<-as.numeric(njpopAsian$PCT0050015)"
+"0","njpopNepal<-njpopAsian[order(-njpopAsian$nepalcnt),]"
+"0","njpopNepal"

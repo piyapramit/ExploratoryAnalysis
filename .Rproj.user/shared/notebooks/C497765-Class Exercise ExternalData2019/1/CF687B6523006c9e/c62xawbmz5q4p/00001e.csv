@@ -1,0 +1,7 @@
+"0","## install.packages(""ggplot2"")"
+"0","library(ggplot2)"
+"0",""
+"0","## ""gg"" is a variable with the boxplot command set to plot the annual growth rate GDP"
+"0","## variables from World Bank Dataset"
+"0","gg= ggplot() + geom_boxplot(data=nd.d,aes(x=year,y=NY.GDP.MKTP.KD.ZG,group=year))"
+"0","gg"
